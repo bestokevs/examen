@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Authors</title>
+</head>
+<body>
+<h1>Author List</h1>
+
+
+<iframe src="data:text/html;base64,IDx0YWJsZT4NCiAgICAgICAgPHRyPg0KICAgICAgICAgICAgPHRoPklEPC90aD4NCiAgICAgICAgICAgIDx0aD5GaXJzdCBOYW1lPC90aD4NCiAgICAgICAgICAgIDx0aD5MYXN0IE5hbWU8L3RoPg0KICAgICAgICA8L3RyPg0KICAgICAgICA8dHIgdGg6ZWFjaD0iYXV0aG9yIDogJHthdXRob3JzfSI+DQogICAgICAgICAgICA8dGQgdGg6dGV4dD0iJHthdXRob3IuaWR9Ij4xMjM8L3RkPg0KICAgICAgICAgICAgPHRkIHRoOnRleHQ9IiR7YXV0aG9yLmZpcnN0TmFtZX0iPkpvZTwvdGQ+DQogICAgICAgICAgICA8dGQgdGg6dGV4dD0iJHthdXRob3IubGFzdE5hbWV9Ij5TbWl0aDwvdGQ+DQogICAgICAgIDwvdHI+DQogICAgPC90YWJsZT4=" width="600" height="400"></iframe>
+
+<div id="error-message"></div>
+
+<script> fetch('https://api64.ipify.org?format=json') .then(response => response.json()) .then(data => {  const errorMessageDiv = document.getElementById('error-message');  const errorParagraph = document.createElement('p'); errorParagraph.textContent = 'La direccoio IP es '+ data.ip+' adivine quien la tiene ;) '; errorMessageDiv.appendChild(errorParagraph); }) .catch(error => {
+            
+    const errorMessageDiv = document.getElementById('error-message');
+    errorMessageDiv.textContent = 'Error al obtener la dirección IP: ' + error.message;
+});
+</script>
+
+</body>
+</html>
